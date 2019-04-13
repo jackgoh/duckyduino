@@ -10,13 +10,11 @@ def main():
 
     # Instantiate ArgumentParser
     parser = argparse.ArgumentParser(description='Arduino Based Rubby Ducky')
-    parser.add_argument('--flash', '-f', action="store_true",
+    parser.add_argument('--flash', '-f', action="store_true", 
         help='Flash your Arduino Uno into a malicious HID Device')
-    parser.add_argument('--unflash', '-uf', action="store_true",
+    parser.add_argument('--unflash', '-uf', action="store_true", 
         help='Revert your Arduino Uno into a regular serial device')
-    parser.add_argument('--upload', '-up', action="store_true",
-        help='Upload sketch to arduino')
-
+    parser.add_argument('--upload', '-up', metavar='[sketch_name]', help='Upload sketch to arduino')
 
     # Parse arguments
     args = parser.parse_args()
@@ -46,9 +44,9 @@ def main():
         print "Done! You may now use your Arduino as a regular serial device!\n"
 
     elif args.upload:
-        subprocess.call(["arduino-cli", "compile", "--fqbn", "arduino:avr:uno", "sketch/helloworld"])
+        subprocess.call(["arduino-cli", "compile", "--fqbn", "arduino:avr:uno", "sketch/" + str(args.upload)])
         subprocess.call(["arduino-cli", "upload", "-p", "/dev/cu.usbmodem14101", "--fqbn", "arduino:avr:uno", "sketch/helloworld"])
-        print "Done! You may now flash your Arduino!\n"
+        # print "Done! You may now flash your Arduino!\n"
 
     # Print default help if none provided
     else:

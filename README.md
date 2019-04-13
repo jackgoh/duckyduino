@@ -27,6 +27,13 @@ This is the output of `--help`
     --unflash, -uf  Revert your Arduino into a regular serial device
     --upload, -up   Upload .ino sketch to Arduino
 
+There are 2 steps to flash your Arduino into HID Keyboard as Rubber Ducky:
+1. Upload duck sketch `python duckyduino.py -up sketch/helloworld`
+2. Flash `python duckyduino.py -f`
+
+To update duck scripts you have to restore your Arduino into default
+`python duckyduino.py -uf`
+
 ## FAQ
 How to put Arduino into DFU mode 
 
