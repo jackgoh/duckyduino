@@ -11,6 +11,7 @@ Arduino Based Rubber Ducky
 
 ## Installation
 For OSX : `brew install dfu-programmer python3 arduino-cli`
+
 Install arduino-cli (https://github.com/arduino/arduino-cli)
 
 ## Usage
@@ -26,6 +27,10 @@ This is the output of `--help`
     --unflash, -uf  Revert your Arduino into a regular serial device
     --upload, -up   Upload .ino sketch to Arduino
 
+## FAQ
+How to put Arduino into DFU mode 
+
+![](https://i.imgur.com/gVLYeHZ.jpg)
 
 
 

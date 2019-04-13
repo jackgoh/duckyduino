@@ -29,7 +29,7 @@ def main():
 
     # Flash as HID
     if args.flash:
-        print "Please short GND and ICSP header pins. Press Enter to continue when complete."
+        print "Please put your Arduino into DFU mode. Press Enter to continue when complete."
         raw_input()
         subprocess.call(["dfu-programmer", "atmega16u2", "erase"])
         subprocess.call(["dfu-programmer", "atmega16u2", "flash", "--debug", "1", HID_HEX])
@@ -38,7 +38,7 @@ def main():
 
     # Flash as a regular serial device
     elif args.unflash:
-        print "Please short GND and ICSP header pins. Press Enter to continue when complete."
+        print "Please put your Arduino into DFU mode. Press Enter to continue when complete."
         raw_input()
         subprocess.call(["dfu-programmer", "atmega16u2", "erase"])
         subprocess.call(["dfu-programmer", "atmega16u2", "flash", "--debug", "1", SERIAL_HEX])
